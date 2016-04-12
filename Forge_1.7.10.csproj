@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3BA3947C-D8F2-4D16-8653-9212C2393ACF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Forge</RootNamespace>
+    <AssemblyName>Forge_1.7.10</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <Folder Include="Packets\Server\Forge\Internal\" />
+    <Folder Include="Packets\Shared\Forge\Internal\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enum\FMLHandshakeClientState.cs" />
+    <Compile Include="Enum\FMLHandshakeServerState.cs" />
+    <Compile Include="Enum\ForgeMessageEnums.cs" />
+    <Compile Include="ForgeClientContext.cs" />
+    <Compile Include="ForgeServerContext.cs" />
+    <Compile Include="Packets\Server\Forge\Handshake\ClientHelloPacket.cs" />
+    <Compile Include="Packets\ForgeMessages.cs" />
+    <Compile Include="Packets\PluginMessageSubPacket.cs" />
+    <Compile Include="Packets\Client\Forge\DimensionRegisterPacket.cs" />
+    <Compile Include="Packets\Client\Forge\FluidIdMapPacket.cs" />
+    <Compile Include="Packets\Client\Forge\Handshake\HandshakeResetPacket.cs" />
+    <Compile Include="Packets\Client\Forge\Handshake\ServerHelloPacket.cs" />
+    <Compile Include="Packets\Client\Forge\Internal\CompleteHandshakePacket.cs" />
+    <Compile Include="Packets\Client\Forge\Internal\EntityAdjustPacket.cs" />
+    <Compile Include="Packets\Client\Forge\Internal\EntitySpawnPacket.cs" />
+    <Compile Include="Packets\Client\Forge\Internal\EntityPacket.cs" />
+    <Compile Include="Packets\Client\Forge\Internal\OpenGuiPacket.cs" />
+    <Compile Include="Packets\Shared\Forge\Handshake\HandshakeAckPacket.cs" />
+    <Compile Include="Packets\Client\Forge\Handshake\ModIdDataPacket.cs" />
+    <Compile Include="Packets\Client\Forge\Handshake\ModListPacket.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(SolutionDir)\Aragas.Core\Aragas.Core.csproj">
+      <Project>{468d9d51-dfe7-47a8-b0d6-52d035fc714d}</Project>
+      <Name>Aragas.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(SolutionDir)\MineLib.Core\fNbt\fNbt\fNbt.Portable.csproj">
+      <Project>{22ac9f07-35ca-4e0e-b3b8-4a8e719df529}</Project>
+      <Name>fNbt.Portable</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(SolutionDir)\MineLib.Core\MineLib.Core.csproj">
+      <Project>{c6be1779-61e7-4c62-989a-9fa62acb2c78}</Project>
+      <Name>MineLib.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+</Project>
