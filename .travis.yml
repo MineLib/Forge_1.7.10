@@ -8,11 +8,11 @@ before_install:
   - git submodule update --init --recursive
   
 install:
-  - nuget restore Forge_1.7.10.sln
+  - nuget restore ModForge_1.7.10.sln
 
 script:
-  - xbuild /p:Configuration=Release Forge_1.7.10.sln
-  - xbuild /p:Configuration=Debug Forge_1.7.10.sln
+  - xbuild /p:Configuration=Release ModForge_1.7.10.sln
+  - xbuild /p:Configuration=Debug ModForge_1.7.10.sln
 
 notifications:
   email:
