@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Forge</RootNamespace>
-    <AssemblyName>Forge_1.7.10</AssemblyName>
+    <AssemblyName>ModForge_1.7.10</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
+    <Folder Include="PacketHandlers\Server\Forge\Internal\" />
     <Folder Include="Packets\Server\Forge\Internal\" />
     <Folder Include="Packets\Shared\Forge\Internal\" />
   </ItemGroup>
@@ -42,8 +43,17 @@
     <Compile Include="Enum\FMLHandshakeClientState.cs" />
     <Compile Include="Enum\FMLHandshakeServerState.cs" />
     <Compile Include="Enum\ForgeMessageEnums.cs" />
-    <Compile Include="ForgeClientContext.cs" />
-    <Compile Include="ForgeServerContext.cs" />
+    <Compile Include="ForgeClientPacketHandlerContext.cs" />
+    <Compile Include="ForgeModAPI.cs" />
+    <Compile Include="ForgeServerPacketHandlerContext.cs" />
+    <Compile Include="PacketHandlers\ForgePacketHandlerContext.cs" />
+    <Compile Include="PacketHandlers\ForgeMessageHandler.cs" />
+    <Compile Include="PacketHandlers\ForgeMessageHandlers.cs" />
+    <Compile Include="PacketHandlers\Server\Forge\Handshake\HandshakeResetHandler.cs" />
+    <Compile Include="PacketHandlers\Server\Forge\Handshake\ServerHelloHandler.cs" />
+    <Compile Include="PacketHandlers\Shared\Forge\Handshake\HandshakeAckHandler.cs" />
+    <Compile Include="PacketHandlers\Shared\Forge\Handshake\ModIdDataHandler.cs" />
+    <Compile Include="PacketHandlers\Shared\Forge\Handshake\ModListHandler.cs" />
     <Compile Include="Packets\Server\Forge\Handshake\ClientHelloPacket.cs" />
     <Compile Include="Packets\ForgeMessages.cs" />
     <Compile Include="Packets\PluginMessageSubPacket.cs" />
@@ -73,6 +83,10 @@
     <ProjectReference Include="$(SolutionDir)\MineLib.Core\MineLib.Core.csproj">
       <Project>{c6be1779-61e7-4c62-989a-9fa62acb2c78}</Project>
       <Name>MineLib.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(SolutionDir)\ProtocolModern_1.7.10\ProtocolModern_1.7.10.csproj">
+      <Project>{ceba6ffc-494a-43a2-8847-8efa99d88605}</Project>
+      <Name>ProtocolModern_1.7.10</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

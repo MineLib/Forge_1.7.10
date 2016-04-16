@@ -4,3 +4,6 @@
 [submodule "MineLib.Core"]
 	path = MineLib.Core
 	url = https://github.com/MineLib/MineLib.Core.git
+[submodule "ProtocolModern_1.7.10"]
+	path = ProtocolModern_1.7.10
+	url = https://github.com/MineLib/ProtocolModern_1.7.10.git

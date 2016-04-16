@@ -7,11 +7,11 @@ using Forge.Enum;
 
 namespace Forge.Packets
 {
-    public static class ForgeMessages
+    internal static class ForgeMessages
     {
-        public static class HandshakeMessages
+        internal static class HandshakeMessages
         {
-            public static readonly Func<PluginMessageSubPacket>[] Packets;
+            internal static readonly Func<PluginMessageSubPacket>[] Packets;
 
             static HandshakeMessages()
             {
@@ -19,9 +19,9 @@ namespace Forge.Packets
             }
         }
 
-        public static class InternalMessages
+        internal static class InternalMessages
         {
-            public static readonly Func<PluginMessageSubPacket>[] Packets;
+            internal static readonly Func<PluginMessageSubPacket>[] Packets;
 
             static InternalMessages()
             {
@@ -29,9 +29,9 @@ namespace Forge.Packets
             }
         }
 
-        public static class Messages
+        internal static class Messages
         {
-            public static readonly Func<PluginMessageSubPacket>[] Packets;
+            internal static readonly Func<PluginMessageSubPacket>[] Packets;
 
             static Messages()
             {

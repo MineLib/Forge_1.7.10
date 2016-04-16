@@ -1,6 +1,6 @@
 ﻿namespace Forge.Enum
 {
-    public enum ForgeHandshakeMessageTypes
+    internal enum ForgeHandshakeMessageTypes
     {
         ServerHello                 = 0,
         ClientHello                 = 1,
@@ -11,7 +11,7 @@
         HandshakeAck                = 255,
     }
 
-    public enum ForgeInternalMessageTypes
+    internal enum ForgeInternalMessageTypes
     {
         CompleteHandshake           = 0,
         OpenGui                     = 1,
@@ -19,7 +19,7 @@
         EntityAdjust                = 3,
     }
 
-    public enum ForgeMessageTypes
+    internal enum ForgeMessageTypes
     {
         DimensionRegister           = 1,
         FluidIdMap                  = 2,

@@ -15,8 +15,8 @@ namespace Forge.Packets.Client.Forge
             public int ID;
         }
 
-        List<FluidIDMap> FluidIDs = new List<FluidIDMap>();
-        List<string> DefaultFluids = new List<string>();
+        public List<FluidIDMap> FluidIDs = new List<FluidIDMap>();
+        public List<string> DefaultFluids = new List<string>();
 
 
         public override byte ID => (byte) ForgeMessageTypes.FluidIdMap;
