@@ -8,5 +8,5 @@ install:
 before_build:
 - nuget restore
 build:
-  project: Forge_1.7.10.sln
+  project: ModForge_1.7.10.sln
   verbosity: minimal
